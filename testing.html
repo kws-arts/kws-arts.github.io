@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Upload Files</title>
+    <!-- <link rel="stylesheet", href="https://dl.dropboxusercontent.com/s/ikgad2gjiuyjpdn/drive_app_styles.css"> -->
+    <link rel="stylesheet", href="testing.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap">
+  </head>
+  <body>
+    <img id="artsLogo" src="arts_council_logo.png" alt="Arts Council Logo">
+    <a href="index.html"><img id="homeButton" src="home_icon.png" alt="Home Button"></a>
+    <a id="response" target="_blank"></a>
+    <div id="contentContainer">
+        <div class="bigText">
+            <h1>TALENT</h1>
+        </div>
+        <div id="uploadContainer">
+            <div id="circleTextContainer">
+                <div id="circleText"></div>
+            </div>
+            <label id="uploadLabel" for="fileButton"><div id="uploadCircle">
+                <h2 class="uploadText">CLICK HERE</h2>
+                <h2 class="uploadText">TO UPLOAD</h2>
+                <h2 class="uploadText">VIDEO</h2>
+            </div></label>
+            <label id="submitLabel" for="submitButton"><div id="submitCircle">
+                <h2>SUBMIT</h2>
+            </div></label>
+
+
+
+            <form id="hiddenForm">
+                <input id="fileButton" type="file" name="userFile" mulitple>
+                <input type="button" id="submitButton" value="Submit File">
+            </form>
+        </div>
+        <div class="bigText">
+            <h1>QUEST</h1>
+        </div>
+    </div>
+
+    <!-- <script>
+      document.getElementById("submitLabel").addEventListener("click",
+        function(e){
+          google.script.run.withSuccessHandler(onSuccess).uploadFiles(document.getElementById("submitButton").parentNode);
+        })
+        
+        function onSuccess(data){
+          document.getElementById("response").innerHTML = "File Uploaded to the path " +data;
+          document.getElementById("response").href = data;
+        }
+       
+    </script> -->
+
+    <!-- Filename display -->
+    <script>
+        var uploadText = document.getElementsByClassName("uploadText");
+        document.getElementById("fileButton").oninput = function() {
+            var filepath = this.value;
+            filepath = filepath.substring(12);
+            
+            uploadText[0].innerHTML = "";
+            uploadText[1].innerHTML = filepath;
+            uploadText[1].style.width = "100%";
+            uploadText[1].style.fontSize = "30px";
+            uploadText[1].style.overflow = "hidden";
+            uploadText[2].innerHTML = "";
+        }
+    </script>
+
+    <!-- Circular text generation -->
+    <script>
+        circularText("arts concil presents", 500);
+
+        function circularText(txt, radius) {
+        txt = txt.split("");
+        var target = document.getElementById("circleText");
+
+        var deg = 65 / txt.length
+        var origin = -33;
+
+        txt.forEach((ea) => {
+            ea = `<p style='height:${radius}px;position:absolute;transform:rotate(${origin}deg);transform-origin:0 100%'>${ea}</p>`;
+            target.innerHTML += ea;
+            origin += deg;
+        });
+        }
+    </script>
+  </body>
+</html>
