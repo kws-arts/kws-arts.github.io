@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Cutive Mono', monospace;
+    /* box-shadow: 0 0 5px pink; */
+}
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: #9EBC99;
+}
+a {
+    text-decoration: none;
+}
+#loadDiv {
+    display: none;  
+}
+#artsLogo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: auto;
+}
+#finalsDate {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 10px;
+}
+#finalsDate p {
+    margin: 5px 0 5px 0;
+    font-size: 35px;
+    text-align: right;
+    color: #0E360C;
+}
+/* Flex Container */
+#contentContainer {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+#contentContainer div {
+    opacity: 1;
+    /* box-shadow: 0 0 5px greenyellow; */
+}
+/* TALENT QUEST Text Styling */
+.bigText {
+    width: auto;
+    height: auto;
+}
+.bigText h1 {
+    margin: 0;
+    font-size: 130px;
+    font-weight: 100;
+    color: #0E360C;
+}
+/* centre content styling */
+#centreContainer {
+    display: flex;
+    width: 500px;
+    height: 675px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+/* Circle Text */
+#circleTextContainer {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
+#circleText * {
+    display: inline-block;
+    font-size: 50px;
+    font-weight: 100;
+    color: white;
+}
+/* Upload redirect button */
+#uploadPageAnchor {
+    position: relative;
+    z-index: 2;
+    top: 28%;
+    cursor: pointer;
+}
+#uploadPageButton {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0E360C;
+    transition: background-colour, 0.25s;
+}
+#uploadPageButton:hover {
+    background-color: #0B2B08;
+}
+#uploadPageButton h2 {
+    margin: 2px;
+    font-size: 28px;
+    font-weight: 100;
+    text-align: center;
+    color: #C7CCB6;
+}
+/* Rules box */
+#rulesContainer {
+    position: relative;
+    width: 1000px;
+    z-index: 3;
+    top: 32%;
+}
+#rulesContainer :nth-child(1) {
+    font-weight: 600;
+}
+#rulesContainer :last-child {
+    text-decoration: line-through;
+}
+#rulesContainer p {
+    margin: 2px;
+    font-size: 25px;
+    text-align: center;
+    color: #0E360C;
+}

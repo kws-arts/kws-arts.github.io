@@ -5,12 +5,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talent Quest | KWS Arts Council</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap">
+    <link rel="stylesheet" href="index_styles.css">
+
+    <style>
+      body, html {
+        margin:0;
+      }
+      #loadDiv {
+        position: fixed;
+        z-index: 5;
+        width:100vw;
+        height:100vh;
+        background-color:#9EBC99;
+      }
+    </style>
 </head>
 <body>
-    <h1>Hello World</h1>
-    <a class="scriptAnchor">Submit entry here</a>
-    <!-- <a href="submit-entry.html">Submit entry here</a> -->
+    <div id="loadDiv"></div>
+
+    <img id="artsLogo" src="https://kws-arts.github.io/arts_council_logo.png" alt="Arts Council Logo">
+
+    <div id="finalsDate">
+        <p>SAVE THE DATE: FINALS</p>
+        <p>Live performances</p>
+        <p>8th JULY lunchtime</p>
+        <p>Events Centre</p>
+    </div>
+
+    <div id="contentContainer">
+        <div class="bigText">
+            <h1>TALENT</h1>
+        </div>
+        <div id="centreContainer">
+            <div id="circleTextContainer">
+                <div id="circleText"></div>
+            </div>
+            <a id="uploadPageAnchor" class="scriptAnchor"><div id="uploadPageButton">
+                <h2>ready to</h2>
+                <h2>upload?</h2>
+                <h2>click here</h2>
+            </div></a>
+
+            <div id="rulesContainer">
+                <p>RULES:</p>
+                <p>Open to individual or group entries.</p>
+                <p>Enter under dance, music, lip sync,</p>
+                <p>or misc (miscellaneous) categories.</p>
+                <p>Please keep your acts to around 4 minutes</p>
+                <p>Please name the files: yearlevel fullname category</p>
+                <p>e.g. 07JohnSmithlipsync</p>
+                <p>Entries close: Wednesday 30th June</p>
+            </div>
+        </div>
+        <div class="bigText">
+            <h1>QUEST</h1>
+        </div>
+    </div>
 
     <script src="https://dl.dropboxusercontent.com/s/uvv16mjhxk69ccd/app_script_source.js"></script>
+
+    <!-- Circular text generation -->
+    <script>
+        circularText("arts council presents", 500);
+
+        function circularText(txt, radius) {
+        txt = txt.split("");
+        var target = document.getElementById("circleText");
+
+        var deg = 67 / txt.length;
+        var origin = -33;
+
+        txt.forEach((ea) => {
+            ea = `<p style='height:${radius}px;position:absolute;transform:rotate(${origin}deg);transform-origin:0 100%'>${ea}</p>`;
+            target.innerHTML += ea;
+            origin += deg;
+        });
+        }
+    </script>
 </body>
 </html>
