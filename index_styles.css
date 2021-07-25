@@ -119,7 +119,7 @@ a {
     font-weight: 600;
 }
 #rulesContainer :last-child {
-    text-decoration: line-through;
+    /* text-decoration: line-through; */
 }
 #rulesContainer p {
     margin: 2px;
